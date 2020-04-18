@@ -10,6 +10,7 @@ big = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O'
 
 i = 0
 def break_this(message):
+    "Breaking..."
     broken = []
     for dec in range(0,26):
         one_text = ''
@@ -31,6 +32,7 @@ def break_this(message):
     return broken
 
 def save_in_file(filename, broken):
+    print("Saving...")
     f = open(filename, "w")
     num = 0
     for i in broken:
@@ -39,12 +41,19 @@ def save_in_file(filename, broken):
         f.write('\n-----\n')
         num += 1
 
+def print_help():
+    print("./breaker <string_to_bruteforce> <filename_to_store>")
+
 def main():
     to_break = sys.argv[1]
     filename = sys.argv[2]
     if to_break and filename:
         broken = break_this(to_break)
         save_in_file(filename, broken)
+        print("Results saved in : " + filename)
+    else:
+        print_help()
+
 
 if __name__ == "__main__":
     main()
