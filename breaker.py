@@ -42,12 +42,12 @@ def save_in_file(filename, broken):
         num += 1
 
 def print_help():
-    print("./breaker <string_to_bruteforce> <filename_to_store>")
+    print("./breaker <string_to_bruteforce> <filename_to_store_results>")
 
 def main():
-    to_break = sys.argv[1]
-    filename = sys.argv[2]
-    if to_break and filename:
+    if sys.argv[1] and sys.argv[2]:
+        to_break = sys.argv[1]
+        filename = sys.argv[2]
         broken = break_this(to_break)
         save_in_file(filename, broken)
         print("Results saved in : " + filename)
