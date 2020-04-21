@@ -31,6 +31,7 @@ def break_this(message):
         broken.append(one_text)
     return broken
 
+
 def save_in_file(filename, broken):
     print("Saving...")
     f = open(filename, "w")
@@ -41,18 +42,21 @@ def save_in_file(filename, broken):
         f.write('\n-----\n')
         num += 1
 
+
 def print_help():
     print("./breaker <string_to_bruteforce> <filename_to_store_results>")
 
+
 def main():
-    if sys.argv[1] and sys.argv[2]:
-        to_break = sys.argv[1]
-        filename = sys.argv[2]
+    to_break, filename = "", ""
+    try:
+        to_break, filename = sys.argv[1:]
+    except ValueError:
+        print_help()
+    if to_break and filename:
         broken = break_this(to_break)
         save_in_file(filename, broken)
         print("Results saved in : " + filename)
-    else:
-        print_help()
 
 
 if __name__ == "__main__":
