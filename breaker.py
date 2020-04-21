@@ -31,15 +31,17 @@ def break_this(message):
         broken.append(one_text)
     return broken
 
+
 def save_in_file(filename, broken):
     print("Saving...")
-    f = open(filename, "w")
-    num = 0
-    for i in broken:
-        f.write('KEY = ' + str(num) + '\n')
-        f.write(i)
-        f.write('\n-----\n')
-        num += 1
+    with open(filename, 'w') as f:
+        num = 0
+        for i in broken:
+            f.write('KEY = ' + str(num) + '\n')
+            f.write(i)
+            f.write('\n-----\n')
+            num += 1
+
 
 def print_help():
     print("./breaker <string_to_bruteforce> <filename_to_store_results>")
