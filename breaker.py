@@ -13,26 +13,23 @@ from string import (
 small = list(ascii_lowercase)
 big = list(ascii_uppercase)
 
-i = 0
+
 def break_this(message):
     "Breaking..."
     broken = []
-    for dec in range(0,26):
+    for dec in range(0, 26):
         one_text = ''
         for letter in message:
-            try:
-                if letter in big:
-                    pos = big.index(letter)
-                    i =  (pos - dec) % 26
-                    one_text += big[i]
-                elif letter in small:
-                    pos = small.index(letter)
-                    i =  (pos - dec) % 26
-                    one_text += small[i]   
-                else:
-                    one_text += letter 
-            except ValueError:
-                one_text += l
+            if letter in big:
+                pos = big.index(letter)
+                i = (pos - dec) % 26
+                one_text += big[i]
+            elif letter in small:
+                pos = small.index(letter)
+                i = (pos - dec) % 26
+                one_text += small[i]
+            else:
+                one_text += letter
         broken.append(one_text)
     return broken
 
@@ -46,7 +43,6 @@ def save_in_file(filename, broken):
             f.write(i)
             f.write('\n-----\n')
             num += 1
-
 
 
 def print_help():
