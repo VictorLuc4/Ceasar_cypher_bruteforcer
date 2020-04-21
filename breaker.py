@@ -5,8 +5,13 @@
 
 import sys
 
-small = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-big = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+from string import (
+    ascii_lowercase,
+    ascii_uppercase,
+)
+
+small = list(ascii_lowercase)
+big = list(ascii_uppercase)
 
 i = 0
 def break_this(message):
