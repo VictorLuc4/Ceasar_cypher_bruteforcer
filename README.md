@@ -1,6 +1,6 @@
 # Caesar Bruteforcer
 
-This programs helps you to bruteforce caser cypher by generating all possibilities and then store them in a file. 
+This programs helps you to bruteforce caser cypher by generating all possibilities and then store them in a file.  
 
 ## Usage
 
